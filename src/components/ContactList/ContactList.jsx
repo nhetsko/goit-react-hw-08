@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createSelector } from '@reduxjs/toolkit';
 import { getContacts } from '../../redux/contactsSlice';
 import { deleteContact } from '../../redux/contactsSlice';
-import { getFilter } from '../../redux/filtersSlice';
 import { IoPersonSharp } from 'react-icons/io5';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import css from './ContactList.module.css';
@@ -10,9 +9,8 @@ import css from './ContactList.module.css';
 export default function ContactList() {
   const dispatch = useDispatch();
 
-
   const getVisibleContacts = createSelector(
-    [getContacts, getFilter],
+    [getContacts, state => state.filters.name], 
     (contacts, filter) => {
       if (!filter) return contacts;
 
@@ -24,7 +22,6 @@ export default function ContactList() {
     }
   );
 
-
   const contacts = useSelector(getVisibleContacts);
 
   return (
@@ -32,7 +29,7 @@ export default function ContactList() {
       <ul className={css.list}>
         {contacts.map(contact => (
           <li className={css.item} key={contact.id}>
-            <div key={contact.id} className={css.container}>
+            <div className={css.container}>
               <div className={css.containerItem}>
                 <div className={css.item}>
                   <IoPersonSharp className={css.icon} />
@@ -46,11 +43,9 @@ export default function ContactList() {
               <button
                 className={css.button}
                 onClick={() => {
-                  dispatch(deleteContact(contact));
+                  dispatch(deleteContact({ id: contact.id })); 
                 }}
-              >
-                Delete
-              </button>
+              >Delete </button>
             </div>
           </li>
         ))}
