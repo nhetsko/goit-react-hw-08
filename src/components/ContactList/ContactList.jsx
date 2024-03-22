@@ -5,7 +5,6 @@ import Contact from '../Contact/Contact';
 
 export default function ContactList() {
   const contacts = useSelector(getVisibleContactsSelector);
-
   return (
     <div>
       <ul className={css.list}>

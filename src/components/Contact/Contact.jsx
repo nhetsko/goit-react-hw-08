@@ -1,16 +1,13 @@
 import { IoPersonSharp } from 'react-icons/io5';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import css from './Contact.module.css';
+import { MdDelete } from "react-icons/md";
 
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsSlice';
+import { deleteContacts } from '../../redux/contactsOps';
 
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
-
-  const handleDelete = () => {
-    dispatch(deleteContact({ id: contact.id }));
-  };
 
   return (
     <li className={css.item} key={contact.id}>
@@ -27,9 +24,10 @@ const Contact = ({ contact }) => {
         </div>
         <button
           className={css.button}
-          onClick={handleDelete}
+          onClick={() => dispatch(deleteContacts(contact.id))}
         >
           Delete
+          <MdDelete className={css.delete} />
         </button>
       </div>
     </li>
