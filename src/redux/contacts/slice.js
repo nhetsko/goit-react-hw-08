@@ -1,6 +1,6 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit';
-import { fetchContacts, addContacts, deleteContacts } from './contactsOps';
-import { selectContactsFilter } from './filtersSlice';
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchContacts, addContacts, deleteContacts, changeContact } from './operations';
+// import toast from 'react-hot-toast';
 
 const phoneContacts = {
   items: [],
@@ -48,25 +48,12 @@ const contactsSlice = createSlice({
       state.loading = false;
       state.error = true;
     })
+  .addCase(changeContact.fulfilled, (state, action) => {
+      const updatedContact = action.payload;
+      state.items = state.items.map(item =>
+        item.id === updatedContact.id ? updatedContact : item
+      );
+    })
 });
 
 export const contactsReducer = contactsSlice.reducer;
-
-export const selectLoading = (state) => state.contacts.loading;
-
-export const selectError = (state) => state.contacts.error;
-
-export const selectContacts = (state) => state.contacts.items;
-
-export const selectFilteredContacts = createSelector(
-  [selectContacts, selectContactsFilter], 
-  (contacts, filter) => {
-    if (!filter) return contacts;
-
-    const normalizedFilter = filter.toLowerCase();
-
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
-    );
-  }
-);

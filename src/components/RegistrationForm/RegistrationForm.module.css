@@ -1,0 +1,137 @@
+/* YourComponent.module.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    flex-direction: column;
+    border: 1px solid #1e00ca;
+    border-radius: 9px;
+}
+
+.form {
+    max-width: 400px;
+    margin-right: 20px;
+    padding: 20px;
+}
+.error {
+    color: #767615f8;
+    font-size: 16px;
+}
+.label {
+    display: block;
+    color: #1e00ca;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button[type="submit"] {
+    width: calc(100% - 12px);
+    padding: 10px;
+    border: 1px solid #1e00ca;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+button[type="submit"] {
+    background-color: #1e00ca;
+    color: #ffff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #002853;
+}
+
+
+.img {
+    background-image: url('../../images/mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 335px;
+    height: 300px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.title {
+    color: #fafafa;
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.text {
+    color: #f6f61cf8;
+    padding: 12px;
+    font-weight: 300;
+    font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+.container { 
+ flex-direction:row; }
+
+.img {
+  background-image: url('../../images/tablet.jpg');
+  width: 387px;
+  height: 450px;
+  border-radius: 8px 0 0 8px; }
+
+.title {
+   color: #fafafa;
+   font-size: 28px;
+   margin-bottom: 10px;
+   font-weight: 600; }
+
+.text {
+font-size: 18px;
+padding: 15px; }
+}
+
+@media screen and (min-width: 1440px) {
+    .img {
+            background-image: url('../../images/desktop.jpg');
+            width: 850px;
+            height: 600px;
+            border-radius: 8px 0 0 8px;
+            margin-right: auto;
+        }
+  .title {
+      font-size: 44px;
+      font-weight: 900;
+  }
+
+  .text {
+      font-size: 25px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  button[type="submit"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 30px;
+  }
+  .form {
+    max-width: 500px;
+  }
+
+  .label {
+      margin-bottom: 15px;
+      font-size: 30px;
+  }
+  button[type="submit"] {
+      font-size: 30px;
+  }
+}

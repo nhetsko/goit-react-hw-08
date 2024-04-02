@@ -1,7 +1,7 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContactsFilter } from '../../redux/filtersSlice';
-import { changeFilter } from '../../redux/filtersSlice';
+import { selectContactsFilter} from '../../redux/filters/selectors';
+import { changeFilter } from '../../redux/filters/slice';
 
 import css from './SearchBox.module.css';
 
@@ -18,14 +18,17 @@ function SearchBox() {
 
   return (
     <div className={css.container}>
-      <p> Find contacts by name</p>
+    <p className={css.text}>Find contacts by name: </p>
+    <div className={css.inputContainer}>
         <input
-          type="text"
-          value={value}
-          onChange={onChangeFilter}
-          id={filterInputId}
+            type="text"
+            value={value}
+            onChange={onChangeFilter}
+            id={filterInputId}
+          className={css.input}
         />
     </div>
+</div>
   );
 }
 

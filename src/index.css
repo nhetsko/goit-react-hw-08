@@ -1,6 +1,9 @@
-
+@font-face {
+  font-family: 'Montserrat';
+  src: url("./fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf") format('ttf');
+}
 body {
-  font-family: sans-serif;
+  font-family:'Montserrat', sans-serif;
   line-height: 1.5;
 }
 

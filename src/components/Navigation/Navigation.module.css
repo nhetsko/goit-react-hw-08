@@ -1,0 +1,38 @@
+.link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 500;
+    color: #1e00ca;
+    font-size: 20px;
+}
+
+.isActive {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #f6f61cf8;
+    border-radius: 30px;
+    background-color: #1e00ca;
+}
+@media screen and (min-width: 768px) {
+    .link {
+        font-size: 24px;
+    }
+
+    .isActive {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .link {
+        font-size: 26px;
+    }
+
+    .isActive {
+        font-size: 26px;
+    }
+}

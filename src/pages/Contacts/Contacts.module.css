@@ -1,0 +1,32 @@
+.username {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    color: #0c0077;
+}
+.title{
+font-size: 35px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    color: #1e00ca;
+}
+@media screen and (min-width: 768px) {
+.username {
+        font-size: 30px;
+    }
+
+    .title {
+        font-size: 45px;
+
+    }
+}
+@media screen and (min-width: 1440px) {
+    .username {
+        font-size: 40px;
+    }
+
+    .title {
+        font-size: 55px;
+
+    }
+}

@@ -1,0 +1,28 @@
+.button {
+background-color: #f6f61cf8;
+color: #1e00ca;
+cursor: pointer;
+padding: 10px;
+border: 3px solid #f6f61cf8;
+border-radius: 30px;
+font-size: 20px;
+font-weight: 500;
+}
+.button:hover {
+background-color: #1e00ca;;
+color: #f6f61cf8;
+border: 3px solid #1e00ca;
+    ;
+}
+@media screen and (min-width: 768px) {
+
+    .button {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .button {
+        font-size: 26px;
+    }
+}

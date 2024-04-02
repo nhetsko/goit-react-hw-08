@@ -1,23 +1,28 @@
 .container {
     display: flex;
-    width: 250px;
-    height: 70px;
+    width: 300px;
+    height: 100px;
     margin-top: 10px;
-    border: 1px solid #146368;
+    border: 1px solid #1e00ca;
     border-radius: 7px;
     padding: 5px;
     align-items: center;
     justify-content: space-around;
+    margin-top: 15px;
 }
 
 .item {
     display: flex;
     align-items: center;
 }
-
+.itemContainer {
+display: flex;
+flex-direction: column;
+gap: 7px;
+}
 .icon {
     margin-right: 10px;
-    color: black;
+    color: #1e00ca;
     width: 12px;
     height: 12px;
 
@@ -28,7 +33,7 @@
     height: 40px;
     margin-top: 10px;
     padding: 7px 5px;
-    background-color: #5b969a;
+    background-color: #1e00ca;
     border-radius: 9px;
     color: white;
     border: none;
@@ -40,12 +45,79 @@
 }
 
 .button:hover {
-    background-color: #146368;
+    background-color: #1e00ca;
 }
 
-.containerItem {
-    margin-right: 20px;
-}
 .delete {
     margin-left: 5px;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 500;
+}
+.edit {
+    margin-left: 5px;
+    color: #f6f61cf8;
+}
+.buttonContainer {
+    margin: 5px;
+}
+.buttonBox {
+display: flex;
+gap: 20px;
+}
+@media screen and (min-width: 768px) {
+.container {
+        width: 340px;
+        height: 120px;
+    }
+.icon {
+    width: 18px;
+    height: 18px;
+
+}
+.containerItem {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.text {
+    font-size: 20px;
+    font-weight: 500;
+}
+.button {
+    width: 120px;
+    height: 50px;
+    font-size: 17px;
+}
+}
+@media screen and (min-width: 1440px) {
+.container {
+        width: 400px;
+        height: 180px;
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+
+    }
+
+    .containerItem {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .text {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .button {
+        width: 150px;
+        height: 70px;
+        font-size: 25px;
+    }
 }
