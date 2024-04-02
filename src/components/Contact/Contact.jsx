@@ -1,115 +1,3 @@
-// import { useState } from 'react'; 
-// import { IoPersonSharp } from 'react-icons/io5';
-// import { BsFillTelephoneFill } from 'react-icons/bs';
-// import { MdDelete } from "react-icons/md"; 
-// import { FaUserEdit } from "react-icons/fa";
-// import css from './Contact.module.css';
-// import { useDispatch } from 'react-redux';
-// import { deleteContacts, changeContact } from '../../redux/contacts/operations'; 
-
-
-
-// const Contact = ({ contact }) => {
-//   const dispatch = useDispatch();
-//   const [isEditing, setIsEditing] = useState(false); 
-//   const [updatedContact, setUpdatedContact] = useState(contact ? {
-//   id: contact.id,
-//   name: contact.name,
-//   number: contact.number
-// } : { id: '', name: '', number: '' });
-
-
-//   const handleSave = () => {
-//   if (
-//     updatedContact.name.trim() !== contact.name.trim() ||
-//     updatedContact.number.trim() !== contact.number.trim()
-//   ) {
-//     dispatch(changeContact({ contactId: updatedContact.id, data: updatedContact }))
-//       .then((result) => {
-//         console.log('Contact updated successfully:', result);
-//         setIsEditing(false);
-//       })
-//       .catch((error) => {
-//         console.error('Failed to update contact:', error);
-//       });
-//   } else {
-//     console.error('No changes made.');
-//     setIsEditing(false); 
-//   }
-// };
-
-
-//   const handleDelete = () => {
-//     dispatch(deleteContacts(contact.id));
-//   };
-
-//   const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     setUpdatedContact({
-//       ...updatedContact,
-//       [name]: value,
-//     });
-//   };
-
-//   return (
-//     <li className={css.item} key={contact.id}>
-//       <div className={css.container}>
-//         <div className={css.containerItem}>
-//           <div className={css.item}>
-//             <IoPersonSharp className={css.icon} />
-//             {isEditing ? (
-//               <input
-//                 type="text"
-//                 name="name"
-//                 value={updatedContact.name}
-//                 onChange={handleInputChange}
-//               />
-//             ) : (
-//               <p className={css.text}>{contact.name}</p>
-//             )}
-//           </div>
-//           <div className={css.item}>
-//             <BsFillTelephoneFill className={css.icon} />
-//             {isEditing ? (
-//               <input
-//                 type="text"
-//                 name="number"
-//                 value={updatedContact.number}
-//                 onChange={handleInputChange}
-//               />
-//             ) : (
-//               <p className={css.text}>{contact.number}</p>
-//             )}
-//           </div>
-//         </div>
-//         {isEditing ? (
-//           <button className={css.button} onClick={handleSave}>
-//             Save
-//           </button>
-//         ) : (
-//           <div className={css.buttonContainer}>
-//             <button
-//               className={css.button}
-//               onClick={() => setIsEditing(true)}
-//             >
-//               Edit
-//               <FaUserEdit className={css.edit} />
-//             </button>
-//             <button
-//               className={css.button}
-//               onClick={handleDelete}
-//             >
-//               Delete
-//               <MdDelete className={css.delete} />
-//             </button>
-//           </div>
-//         )}
-//       </div>
-//     </li>
-//   );
-// };
-
-// export default Contact;
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteContacts, changeContact } from '../../redux/contacts/operations';
@@ -122,7 +10,7 @@ import { FaUserEdit } from "react-icons/fa";
 import { Modal, Input, Button } from 'antd';
 import css from './Contact.module.css';
 
-const ContactItem = ({ contact }) => {
+const Contact = ({ contact }) => {
   const dispatch = useDispatch();
 
   const [showModal, setShowModal] = useState(false);
@@ -255,4 +143,4 @@ const ContactItem = ({ contact }) => {
   );
 };
 
-export default ContactItem;
+export default Contact;
