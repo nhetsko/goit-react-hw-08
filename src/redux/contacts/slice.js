@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContacts, deleteContacts, changeContact } from './operations';
-// import toast from 'react-hot-toast';
+import { logOut } from '../auth/operations';
 
 const phoneContacts = {
   items: [],
@@ -53,7 +53,10 @@ const contactsSlice = createSlice({
       state.items = state.items.map(item =>
         item.id === updatedContact.id ? updatedContact : item
       );
-    })
+  })
+  .addCase(logOut.fulfilled, (state) => {
+   state.items = [];
+})
 });
 
 export const contactsReducer = contactsSlice.reducer;
